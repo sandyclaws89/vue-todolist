@@ -30,7 +30,7 @@
               <!-- <div v-if="done">{{element.text}}</div> -->
               <div :class="element.done == false ? 'text-through' : '' ">  {{element.text}} </div>
              <!-- <div v-else="done">{{element.text}}</div> -->
-              <button class="btn-delete">X</button>
+              <button @click="deleteElement(index)" class="btn-delete">X</button>
           </li>
           <!-- <li class="todo-item">
               <div>Fare i compiti</div>
