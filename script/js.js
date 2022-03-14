@@ -17,4 +17,27 @@ Buon lavoro e buon divertimento!*/
 /* PSEUDOCODIFICA:
     CREO ARRAY DI OGGETTI (TEXT: FARE QUESTO, DONE: FALSE)
     ITERO PER LA LUNGHEZZA DELL'ARRAY PER STAMPARE TUTTI I TODO
-            
+       
+*/
+const app = new Vue({
+    el : '#root',
+    data:{ 
+    
+        todosArr: [{
+                text:'lavare i piatti',
+                done: true,
+            }, 
+            {
+                text:'uscire in bici',
+                done: true,
+            },
+            {
+                text:'leggere un libro',
+                done: true,
+            },
+        ],
+    }
+       
+
+
+})
