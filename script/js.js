@@ -29,7 +29,7 @@ const app = new Vue({
             }, 
             {
                 text:'uscire in bici',
-                done: true,
+                done: false,
             },
             {
                 text:'leggere un libro',

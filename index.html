@@ -27,7 +27,8 @@
         <ul class="todo-list">
             <!-- itero ogni elemnto della lista per tutti gli elementi che sono in todos ('in todos'), poi mettendo {{element}} dentro il div dopo stampo l'elemento della lista; al click sul bottone delete(che sarebbe la x) chiamo la funzione deleteTodo(index) che sarebbe la funzione che cancella un elemento dalla lista. Devo per forza mettere deleteTodo(index) anche nella classe perché sennò non sa da dove deve partire.  -->
           <li v-for="(element, index) in todosArr" class="todo-item">
-              <div>{{element.text}}</div>
+              <div v-if="done==true">{{element.text}}</div>
+              <div v-else="done==false" class="text-through">{{element.text}}</div>
               <button class="btn-delete">X</button>
           </li>
           <!-- <li class="todo-item">
