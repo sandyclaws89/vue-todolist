@@ -12,7 +12,7 @@
         <div class="add-todo">
   
           <!-- ad input gli dico quando accade l'event keyup.enter (quindi quando viene premuto il tasto enter) chiama la funzione addTodo(funzione che aggiunge un elemento alla lista), definita in js. il v-model serve a collegare l'input al div dove lo visualizziamo. Nel nostro caso abbiamo assegnato al v-model la classe newTodo che vale  una stringa vuota ('') per far si che ad ogni input inserito si ripulisca. Il name è solo per identificare meglio; il size serve nel responsive, praticamente gli stiamo dicendo che si può restringere massimo della larghezza di un carattere.      -->
-         <input type="text" name="todo-name" id="todo-name" placeholder="Nuovo Todo" size="1"> 
+         <input  @keyup.enter="addElement" type="text" name="todo-name" id="todo-name" placeholder="Nuovo Todo" size="1" v-model="userInput"> 
           
           <!-- ----------------------------- -->
           <!-- ESEMPIO KEYDOWN CON KEYCODE -->
@@ -20,13 +20,15 @@
           <!-- ----------------------------- -->
   
           <!-- al bottone diamo un evento click e chiamo la funzione addTodo(funzione che aggiunge una voce all'elenco) -->
-          <button>Add</button>
+          <button @click="addElement" >Add</button>
+
+          <!-- <input @keyup.enter="addElement" type="text" v-model="userInput"> -->
   
         </div>  
   
         <ul class="todo-list">
             <!-- itero ogni elemnto della lista per tutti gli elementi che sono in todos ('in todos'), poi mettendo {{element}} dentro il div dopo stampo l'elemento della lista; al click sul bottone delete(che sarebbe la x) chiamo la funzione deleteTodo(index) che sarebbe la funzione che cancella un elemento dalla lista. Devo per forza mettere deleteTodo(index) anche nella classe perché sennò non sa da dove deve partire.  -->
-          <li v-for="(element, index) in todosArr" class="todo-item" >
+          <li v-for="(element, index) in todosArr" class="todo-item">
               <!-- <div v-if="done">{{element.text}}</div> -->
               <div :class="element.done == false ? 'text-through' : '' ">  {{element.text}} </div>
              <!-- <div v-else="done">{{element.text}}</div> -->
