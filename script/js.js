@@ -21,8 +21,10 @@ Buon lavoro e buon divertimento!*/
 */
 const app = new Vue({
     el : '#root',
-    data:{ 
     
+
+    data:{ 
+        userInput:'ciao',
         todosArr: [{
                 text:'lavare i piatti',
                 done: true,
@@ -36,11 +38,19 @@ const app = new Vue({
                 done: true,
             },
         ],
+        
     },
      methods:{
          deleteElement(index){
              this.todosArr.splice(index, 1)
+         },
+
+         addElement(){
+           this.todosArr.unshift(this.userInput.trim());
          }
+        //  clearElement(){
+        //      this.todosArr
+        //  }
      }  
 
 
